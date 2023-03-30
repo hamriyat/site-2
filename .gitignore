@@ -1,2 +1,6 @@
 /node_modules/
 
+/.idea/modules.xml
+/.idea/site-2.iml
+/.idea/vcs.xml
+/.idea/.gitignore

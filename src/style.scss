@@ -6,7 +6,7 @@ body {
    font-size: 18px;
    color: #475569;
 
-   &__scroll-lock-js {
+   &.scroll-lock-js {
       overflow: hidden;
    }
 }
@@ -133,7 +133,7 @@ body {
       height: 100%;
       padding: 60px 0 50px;
       background-color: #FFFFFF;
-      transition: left 0.3s ease 0s;
+      transition: 0.3s;
       overflow: auto;
 
    &--active-js {
@@ -218,7 +218,7 @@ body {
    }
 
    &__link {
-      width: calc(100vw - 40px);
+      width: 100%;
       text-align: center;
       padding: 15px 0;
    }
