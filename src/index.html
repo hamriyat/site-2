@@ -15,7 +15,7 @@
                <div class="header__logo">
                   <a href="#">
                      <picture>
-                        <source media="(max-width:767.98px )" srcset="images/header/logo-desktop.svg">
+                        <source media="(min-width:767.999px )" srcset="images/header/logo-desktop.svg">
                         <img src="images/header/logo.svg" alt="logo">
                      </picture>
                   </a>
@@ -28,10 +28,13 @@
                      <li class="menu__item">
                         <a href="#" class="menu__link">Top experts </a>
                      </li>
+                     <li class="menu__item menu__item--desktop-visible">
+                        <a href="#" class="menu__link">Contacts</a>
+                     </li>
                      <li class="menu__item">
                         <a href="#" class="menu__link">FAQ</a>
                      </li>
-                     <li class="menu__item">
+                     <li class="menu__item menu__item--desktop-non-visible">
                         <a href="#" class="menu__link">Terms of Use / Privacy Policy</a>
                      </li>
                   </ul>
@@ -50,18 +53,22 @@
          <section class="intro">
             <div class="intro__container">
                <div class="intro__content">
-                  <h1 class="intro__header">Staying late to do homework again?</h1>
-                  <p class="intro__text">
-                     It doesn’t have to be this way! Enjoy the process of studying with the help of our caring experts
-                     who’re up to any assignment you may have.
-                  </p>
+                  <div class="intro__left">
+                     <h1 class="intro__header">Staying late to do homework again?</h1>
+                     <p class="intro__text">
+                        It doesn’t have to be this way! Enjoy the process of studying with the help of our caring
+                        experts
+                        who’re up to any assignment you may have.
+                     </p>
+                  </div>
                </div>
-               <div class="intro__select select">
-                  <div class="select__left">
-                     <select name="subject" id="subject">
+               <img class="intro__img" src="images/intro/working-late.svg" alt="student working late">
+               <div class="intro__what-subject what-subject">
+                  <div class="what-subject__left">
+                     <select name="subject" id="subject" class="what-subject__select">
                         <option value="subject">What subject do you need help with?</option>
                      </select>
-                     <div class="select__subjects">
+                     <div class="what-subject__subjects">
                         <span>For ex.:</span>
                         <span>English</span>
                         <span>Business</span>
@@ -69,10 +76,436 @@
                         <span>History</span>
                      </div>
                   </div>
-                  <a href="#" class="intro__link btn">Get Help In 7 Minutes</a>
+                  <a href="#" class="what-subject__link btn">Get Help In 7 Minutes</a>
                </div>
             </div>
          </section>
+         <section class="trusted-by">
+            <div class="trusted-by__container">
+               <div class="trusted-by__header">
+                  <h2 class="trusted-by__title">Trusted by</h2>
+                  <span class="trusted-by__numbers">14,000+</span>
+                  <span class="trusted-by__text">happy customers and experts</span>
+               </div>
+               <div class="trusted-by__items">
+                  <div class="trusted-by__item item">
+                     <a href="#"><img class="item__logo" src="images/trusted-by/trustpilot-logo.svg"
+                           alt="trustpilot logo"></a>
+                     <span class="item__rating">4.6
+                        <img src="images/trusted-by/green-stars.svg" alt="review rating">
+                     </span>
+                  </div>
+                  <div class="trusted-by__item item">
+                     <a href="#"><img class="item__logo" src="images/trusted-by/sitejabber-logo.svg"
+                           alt="sitejabber logo"></a>
+                     <span class="item__rating item__rating--rounded-stars">4.6
+                        <img src="images/trusted-by/rounded-stars.svg" alt="review rating">
+                     </span>
+                  </div>
+                  <div class="trusted-by__item item">
+                     <a href="#"><img class="item__logo" src="images/trusted-by/reviews-io-logo.svg"
+                           alt="reviews.io logo"></a>
+                     <span class="item__rating item__rating--stars">4.7
+                        <img src="images/trusted-by/stars.svg" alt="review rating">
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="stressful">
+            <div class="stressful__container">
+               <img src="images/stressful/stressed-person.svg" alt="stressed person during work time"
+                  class="stressful__img">
+               <div class="stressful__content">
+                  <h2 class="stressful__title">We know how stressful it is to be a student:</h2>
+                  <ul class="stressful__list list">
+                     <li class="list__item">
+                        <span class="list__bullet"></span>
+                        Deadlines are always approaching and unfinished tasks pile up.
+                     </li>
+                     <li class="list__item">
+                        <span class="list__bullet"></span>
+                        Fears about letting the parents down never leave your mind.
+                     </li>
+                     <li class="list__item">
+                        <span class="list__bullet"></span>
+                        Too many tasks leave no time for favorite subjects, let alone hobbies.
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+         <section class="get-help">
+            <div class="get-help__container">
+               <h2 class="get-help__title title">What do you want your life to look like?</h2>
+               <div class="get-help__content">
+                  <div class="get-help__block block">
+                     <img src="images/get-help/exhausted.svg" alt="overwhelmed person at work" class="block__img">
+                     <div class="block__content">
+                        <h3 class="block__title">Manage by yourself and feel exhausted</h3>
+                        <ul class="block__list list">
+                           <li class="list__item">
+                              <span class="list__bullet"></span>
+                              Read 10 books simultaneously, not for pleasure.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet"></span>
+                              Spend hours planning the work you won’t do on time.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet"></span>
+                              Think about all the requirements you have to follow.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet"></span>
+                              Sleep a couple of hours a day, if you’re lucky.
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="get-help__block block">
+                     <img src="images/get-help/help.svg" alt="a person getting assistance from another person"
+                        class="block__img">
+                     <div class="block__content">
+                        <h3 class="block__title">Get help from our experts and relax</h3>
+                        <ul class="block__list list">
+                           <li class="list__item">
+                              <span class="list__bullet list__bullet--green"></span>
+                              Do your favorite tasks, we’ll assist with the rest.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet list__bullet--green"></span>
+                              Meet all deadlines, no more sleepless nights.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet list__bullet--green"></span>
+                              Follow all the rules: formatting styles, references, etc.
+                           </li>
+                           <li class="list__item">
+                              <span class="list__bullet list__bullet--green"></span>
+                              Live a stress-free academic life that brings you joy.
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="experts">
+            <h2 class="experts__title title">Top certified experts</h2>
+            <div class="swiper">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="experts__card card">
+                        <div class="card__writer writer">
+                           <div class="writer__top">
+                              <span class="writer__online">Online</span>
+                              <img src="images/experts/writer-photo-1.jpg" alt="writer's photo" class="writer__pic">
+                              <h3 class="writer__name">Dora 360</h3>
+                              <div class="writer__rating">
+                                 <span class="writer__stars">4.9</span>
+                                 <span class="writer__reviews-number">250 reviews</span>
+                              </div>
+                           </div>
+                           <div class="writer__bottom">
+                              <ul class="writer__list list">
+                                 <li class="list__item">Completed projects
+                                    <span>350</span>
+                                 </li>
+                                 <li class="list__item">Joined us
+                                    <span>Sep 2018</span>
+                                 </li>
+                              </ul>
+                              <a href="#" class="writer__link btn">Get In Touch</a>
+                           </div>
+                        </div>
+                        <div class="card__reviews reviews">
+                           <h3 class="reviews__title">Reviews</h3>
+                           <div class="reviews__section">
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you Kellar, she was able to complete way before the time it was due. I’m
+                                    sure I’ll
+                                    hire her again if needed...
+                                 </p>
+                              </div>
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you, for the professionally written letter to the hiring manager of the
+                                    department I
+                                    have interest transferring to. I can work off this and continue to add to this
+                                    letter for
+                                    a position on the team.
+                                 </p>
+                              </div>
+                              <a class="reviews__link" href="#">See all reviews</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="experts__card card">
+                        <div class="card__writer writer">
+                           <div class="writer__top">
+                              <span class="writer__online">Online</span>
+                              <img src="images/experts/writer-photo-1.jpg" alt="writer's photo" class="writer__pic">
+                              <h3 class="writer__name">Dora 360</h3>
+                              <div class="writer__rating">
+                                 <span class="writer__stars">4.9</span>
+                                 <span class="writer__reviews-number">250 reviews</span>
+                              </div>
+                           </div>
+                           <div class="writer__bottom">
+                              <ul class="writer__list list">
+                                 <li class="list__item">Completed projects
+                                    <span>350</span>
+                                 </li>
+                                 <li class="list__item">Joined us
+                                    <span>Sep 2018</span>
+                                 </li>
+                              </ul>
+                              <a href="#" class="writer__link btn">Get In Touch</a>
+                           </div>
+                        </div>
+                        <div class="card__reviews reviews">
+                           <h3 class="reviews__title">Reviews</h3>
+                           <div class="reviews__section">
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you Kellar, she was able to complete way before the time it was due. I’m
+                                    sure I’ll
+                                    hire her again if needed...
+                                 </p>
+                              </div>
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you, for the professionally written letter to the hiring manager of the
+                                    department I
+                                    have interest transferring to. I can work off this and continue to add to this
+                                    letter for
+                                    a position on the team.
+                                 </p>
+                              </div>
+                              <a class="reviews__link" href="#">See all reviews</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="experts__card card">
+                        <div class="card__writer writer">
+                           <div class="writer__top">
+                              <span class="writer__online">Online</span>
+                              <img src="images/experts/writer-photo-1.jpg" alt="writer's photo" class="writer__pic">
+                              <h3 class="writer__name">Dora 360</h3>
+                              <div class="writer__rating">
+                                 <span class="writer__stars">4.9</span>
+                                 <span class="writer__reviews-number">250 reviews</span>
+                              </div>
+                           </div>
+                           <div class="writer__bottom">
+                              <ul class="writer__list list">
+                                 <li class="list__item">Completed projects
+                                    <span>350</span>
+                                 </li>
+                                 <li class="list__item">Joined us
+                                    <span>Sep 2018</span>
+                                 </li>
+                              </ul>
+                              <a href="#" class="writer__link btn">Get In Touch</a>
+                           </div>
+                        </div>
+                        <div class="card__reviews reviews">
+                           <h3 class="reviews__title">Reviews</h3>
+                           <div class="reviews__section">
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you Kellar, she was able to complete way before the time it was due. I’m
+                                    sure I’ll
+                                    hire her again if needed...
+                                 </p>
+                              </div>
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you, for the professionally written letter to the hiring manager of the
+                                    department I
+                                    have interest transferring to. I can work off this and continue to add to this
+                                    letter for
+                                    a position on the team.
+                                 </p>
+                              </div>
+                              <a class="reviews__link" href="#">See all reviews</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="experts__card card">
+                        <div class="card__writer writer">
+                           <div class="writer__top">
+                              <span class="writer__online">Online</span>
+                              <img src="images/experts/writer-photo-1.jpg" alt="writer's photo" class="writer__pic">
+                              <h3 class="writer__name">Dora 360</h3>
+                              <div class="writer__rating">
+                                 <span class="writer__stars">4.9</span>
+                                 <span class="writer__reviews-number">250 reviews</span>
+                              </div>
+                           </div>
+                           <div class="writer__bottom">
+                              <ul class="writer__list list">
+                                 <li class="list__item">Completed projects
+                                    <span>350</span>
+                                 </li>
+                                 <li class="list__item">Joined us
+                                    <span>Sep 2018</span>
+                                 </li>
+                              </ul>
+                              <a href="#" class="writer__link btn">Get In Touch</a>
+                           </div>
+                        </div>
+                        <div class="card__reviews reviews">
+                           <h3 class="reviews__title">Reviews</h3>
+                           <div class="reviews__section">
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you Kellar, she was able to complete way before the time it was due. I’m
+                                    sure I’ll
+                                    hire her again if needed...
+                                 </p>
+                              </div>
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you, for the professionally written letter to the hiring manager of the
+                                    department I
+                                    have interest transferring to. I can work off this and continue to add to this
+                                    letter for
+                                    a position on the team.
+                                 </p>
+                              </div>
+                              <a class="reviews__link" href="#">See all reviews</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="experts__card card">
+                        <div class="card__writer writer">
+                           <div class="writer__top">
+                              <span class="writer__online">Online</span>
+                              <img src="images/experts/writer-photo-1.jpg" alt="writer's photo" class="writer__pic">
+                              <h3 class="writer__name">Dora 360</h3>
+                              <div class="writer__rating">
+                                 <span class="writer__stars">4.9</span>
+                                 <span class="writer__reviews-number">250 reviews</span>
+                              </div>
+                           </div>
+                           <div class="writer__bottom">
+                              <ul class="writer__list list">
+                                 <li class="list__item">Completed projects
+                                    <span>350</span>
+                                 </li>
+                                 <li class="list__item">Joined us
+                                    <span>Sep 2018</span>
+                                 </li>
+                              </ul>
+                              <a href="#" class="writer__link btn">Get In Touch</a>
+                           </div>
+                        </div>
+                        <div class="card__reviews reviews">
+                           <h3 class="reviews__title">Reviews</h3>
+                           <div class="reviews__section">
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you Kellar, she was able to complete way before the time it was due. I’m
+                                    sure I’ll
+                                    hire her again if needed...
+                                 </p>
+                              </div>
+                              <div class="reviews__item item">
+                                 <div class="item__header">
+                                    <span class="item__name">user4562</span>
+                                    <span class="item__rating">5</span>
+                                 </div>
+                                 <p class="item__text">
+                                    Thank you, for the professionally written letter to the hiring manager of the
+                                    department I
+                                    have interest transferring to. I can work off this and continue to add to this
+                                    letter for
+                                    a position on the team.
+                                 </p>
+                              </div>
+                              <a class="reviews__link" href="#">See all reviews</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+         </section>
+         <div class="stats">
+            <div class="stats__container">
+               <div class="stats__top">
+                  <span>98063</span>
+                  Completed Tasks
+               </div>
+               <div class="stats__bottom">
+                  <ul class="stats__list list">
+                     <li class="list__item">
+                        <span>4.8/5</span>
+                        Satisfaction Rate
+
+                     </li>
+                     <li class="list__item">
+                        <span>102</span>
+                        Experts Online
+                     </li>
+                     <li class="list__item">
+                        <span>24/7</span>
+                        Customer Support
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </main>
       <footer class="footer"></footer>
    </div>
