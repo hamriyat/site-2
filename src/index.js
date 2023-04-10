@@ -1,13 +1,13 @@
 'use strict';
 
 import './style.scss';
-
 // import Swiper JS
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 let swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],
     speed: 1200,
+    loop: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -16,7 +16,7 @@ let swiper = new Swiper(".swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    slidesPerView: 1,
+    slidesPerView: "auto",
     spaceBetween: 40,
 });
 
@@ -39,13 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const loginBtn = document.querySelector('.header__login-btn');
    const hireWriterBtn = document.querySelector('.header__hire-btn');
 
-   if (window.innerWidth >= 768) {
-      loginBtn.textContent = "Log in / Sign up ";
-      hireWriterBtn.textContent = "Hire Expert";
-   } else if ((window.innerWidth < 768)) {
-      loginBtn.textContent = "Log in";
-      hireWriterBtn.textContent = "Hire";
-   }
+   addTextToBtns();
 
    window.addEventListener('resize', e => {
       addTextToBtns();
@@ -55,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth >= 768) {
          loginBtn.textContent = "Log in / Sign up ";
          hireWriterBtn.textContent = "Hire Expert";
-      } else if ((window.innerWidth < 768)) {
+      } else {
          loginBtn.textContent = "Log in";
          hireWriterBtn.textContent = "Hire";
       }
