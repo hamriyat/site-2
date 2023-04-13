@@ -56,18 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 
    // accordion
-   const accordion = document.getElementsByClassName('accordion__panel');
-   let i;
-   for (i=0; i<accordion.length; i++) {
-      accordion[i].addEventListener('click', function () {
-         this.classList.toggle('accordion__panel--active-js')
-         const activeEl = document.querySelector('.accordion__panel--active-js');
-         const accordionLabel = document.querySelector('.accordion__label');
-         if (activeEl) {
-            accordionLabel.style.color = '#6AA6DA';
-         }
-      })
-   }
+   const accordion = document.querySelectorAll('.accordion__panel');
+
+    accordion.forEach(el => {
+
+      el.addEventListener('click', function () {
+
+          let check = this.classList.contains('accordion__panel--active-js');
+
+          accordion.forEach(el => {
+              el.classList.remove('accordion__panel--active-js');
+          })
+
+          if(!check) {
+              this.classList.add('accordion__panel--active-js');
+          }
+
+      });
+
+   });
+
+
 });
 
 
