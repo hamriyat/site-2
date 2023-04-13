@@ -6,7 +6,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
 let swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],
-    speed: 1200,
+    speed: 1000,
     loop: true,
     pagination: {
         el: ".swiper-pagination",
@@ -53,6 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
          loginBtn.textContent = "Log in";
          hireWriterBtn.textContent = "Hire";
       }
+   }
+
+   // accordion
+   const accordion = document.getElementsByClassName('accordion__panel');
+   let i;
+   for (i=0; i<accordion.length; i++) {
+      accordion[i].addEventListener('click', function () {
+         this.classList.toggle('accordion__panel--active-js')
+         const activeEl = document.querySelector('.accordion__panel--active-js');
+         const accordionLabel = document.querySelector('.accordion__label');
+         if (activeEl) {
+            accordionLabel.style.color = '#6AA6DA';
+         }
+      })
    }
 });
 
