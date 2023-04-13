@@ -39,13 +39,16 @@ body {
    @media (min-width: 767.999px) {
       padding: 0 25px;
    }
+
+   @media (max-width: 374px) {
+      padding: 0 10px;
+   }
 }
 
 //==========SWIPER===============
 
 .swiper {
    padding: 0 0 50px;
-   //make focused slide centered
 }
 
 .swiper-slide {
@@ -82,14 +85,26 @@ body {
    line-height: 1.3125;
    color: #1D293F;
    text-align: center;
+}
 
-   // @media (min-width: 767.999px) {
+.btn {
+   display: inline-block;
+   font-size: 16px;
+   text-align: center;
+   font-weight: 500;
+   line-height: 1.5;
+   padding: 10px 25px;
+   border-radius: 15px;
+   color: #FFFFFF;
+   background-color: #EE684E;
+   transition: all 0.3s;
 
-   // }
-
-   // @media (min-width: $desktop-width) {
-      
-   // }
+   &:hover,
+   &:focus-within,
+   &:active {
+      background-color: #d43a1c;
+      box-shadow: 0 3px 10px rgba(71,85,105,.3);
+   }
 }
 
 //========HEADER==============
@@ -121,6 +136,10 @@ body {
       position: relative;
       z-index: 4;
       margin-right: 20px;
+
+      @media (max-width: 374px) {
+         margin-right: 15px;
+      }
    }
 
    &__login-btn {
@@ -148,6 +167,17 @@ body {
             background-color: #6AA6DA;
             color: #FFFFFF;
          }
+      }
+
+      @media (max-width: 374px) {
+         margin-right: 5px;
+      }
+   }
+
+   &__hire-btn {
+
+      @media (max-width: 374px) {
+         padding: 10px 18px;
       }
    }
 
@@ -308,26 +338,6 @@ body {
    }
 }
 
-.btn {
-   display: inline-block;
-   font-size: 16px;
-   text-align: center;
-   font-weight: 500;
-   line-height: 1.5;
-   padding: 10px 25px;
-   border-radius: 15px;
-   color: #FFFFFF;
-   background-color: #EE684E;
-   transition: all 0.3s;
-
-   &:hover,
-   &:focus-within,
-   &:active {
-      background-color: #d43a1c;
-      box-shadow: 0 3px 10px rgba(71,85,105,.3);
-   }
-}
-
 // =================MAIN=================
 
 // ==============INTRO====================
@@ -420,12 +430,15 @@ body {
          opacity: 0.8;
          width: 100%;
          margin-bottom: 10px;
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
    
          // reset-     
          appearance: none;
          -webkit-appearance: none;
          -moz-appearance: none;
-         padding-right: 15px;
+         padding-right: 40px;
          // -reset
    
          background-image: url(images/intro/select-arrow.svg);
@@ -444,10 +457,26 @@ body {
             margin-right: 15px;
          }
    
-         span:not(:first-child) {
+         a {
+            position: relative;
             color: #6AA6DA;
-            border-bottom: 1px solid #6AA6DA;
             padding-bottom: 2px;
+
+            &:hover::after {
+               transform: scale(0);
+            }
+            
+            &::after {
+               position: absolute;
+               content: '';
+               height: 1px;
+               width: 100%;
+               top: 100%;
+               left: 0;
+               transform: scale(1);
+               transition: 0.5s;
+               background-color: #6AA6DA;
+            }
          }
       }
    
@@ -751,7 +780,7 @@ body {
 // ================EXPERTS==============
 
 .experts {
-   padding: 60px 20px;
+   padding: 60px 0;
    position: relative;
 
    @media (min-width: 767.999px) {
@@ -1518,7 +1547,6 @@ body {
          display: flex;
          justify-content: space-between;
       }
-
    }
 
    &__price {
@@ -1789,6 +1817,7 @@ body {
 
       &__top {
          margin: 0 auto 30px;
+         width: 100%;
          max-width: 315px;
 
          @media (min-width: 767.999px) {
@@ -1797,6 +1826,7 @@ body {
 
          @media (min-width: 1020px) {
             max-width: 100%;
+            width: auto;
          }
       }
 
@@ -1877,10 +1907,11 @@ body {
       &:not(:last-child) {
          margin-bottom: 30px;
       }
-
    }
 
    &__label {
+      display: flex;
+      gap: 15px;
       font-size: 20px;
       font-weight: 500;
       display: flex;
@@ -1889,17 +1920,26 @@ body {
       cursor: pointer;
       transition: 0.5s;
 
-      // &:hover,
-      // &:focus-within,
-      // &:active {
-      //    color: #6AA6DA;
-      // }
+      span {
+         margin-right: 25px;
+         position: relative;
 
-      &::after {
-         content: '+';
-         transition: 0.8s;
-         margin-left: 10px;
-      }
+         &::before,
+         &::after {
+         content: '';
+         position: absolute;
+         transition: 0.5s;
+         top: 10px;
+         left: 0;
+         height: 2px;
+         width: 16px;
+         background-color:#1D293F;
+         }
+         
+         &::after {
+            transform: rotate(90deg);
+         }
+      }  
    }
 
    &__content {
@@ -1914,20 +1954,86 @@ body {
    }
 
    &__panel--active-js {
+
       .accordion__content {
-         max-height: 1000px;
+         max-height: 800px;
       }
 
      .accordion__label {
         color:#6AA6DA;
-        &::after {
-           content: '-';
+
+        span::before,
+        span::after {
+         background-color:#6AA6DA;
+        }
+
+        span::after {
+         transform: rotate(0deg);
         }
      }
+   }
+}
 
+// ==========TIP=============
+
+.tip {
+   padding-bottom: 40px;
+
+   @media (min-width: 767.999px) {
+      padding: 20px 0 100px; 
    }
 
+   @media (min-width: $desktop-width) {
+      padding-top: 40px;
+   }
+
+   &__title {
+      text-align: left;
+      margin-bottom: 30px;
+
+      @media (min-width: 767.999px) {
+         font-size: 34px;
+         font-weight: 600;
+      }
+   
+      @media (min-width: $desktop-width) {
+         font-size: 44px;
+      }
+   }
+
+   &__content {
+      color: #1D293F;
+      line-height: 1.65;
+      margin-bottom: 30px; 
+
+      & p:not(:last-child) {
+         margin-bottom: 15px;
+      }
+   }
+
+   &__see-more {
+      height: 0;
+      overflow: hidden;
+
+      &--visible-js {
+         height: auto;
+      }
+   }
+
+   &__btn {
+      background-color: transparent;
+      color: #6AA6DA;
+      border: 1px solid #6AA6DA;
+
+      &:hover,
+      &:focus-within {
+         background-color: #6AA6DA;
+         color: #FFFFFF;
+      }
+   }
 }
+
+
 
 
 

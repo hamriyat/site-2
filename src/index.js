@@ -4,6 +4,8 @@ import './style.scss';
 // import Swiper JS
 import Swiper, { Navigation, Pagination } from 'swiper';
 
+document.addEventListener('DOMContentLoaded', () => {
+
 let swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],
     speed: 1000,
@@ -17,14 +19,15 @@ let swiper = new Swiper(".swiper", {
         prevEl: ".swiper-button-prev",
     },
     slidesPerView: "auto",
+    initialSlide: 1,
     spaceBetween: 40,
 });
 
 // burger menu
 
-document.addEventListener('DOMContentLoaded', () => {
-   const menuBtn = document.querySelector('.header__burger');
-   const menuBody  = document.querySelector('.menu');
+
+const menuBtn = document.querySelector('.header__burger');
+const menuBody  = document.querySelector('.menu');
 
    if (menuBtn && menuBody) {
       menuBtn.addEventListener('click', function (e) {
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
    // accordion
    const accordion = document.querySelectorAll('.accordion__panel');
 
-    accordion.forEach(el => {
+   accordion.forEach(el => {
 
       el.addEventListener('click', function () {
 
@@ -71,12 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
           if(!check) {
               this.classList.add('accordion__panel--active-js');
           }
-
       });
-
    });
 
+   // show hidden text (tip section)
+   const readMore = document.querySelector('.tip__btn');
 
+   readMore.addEventListener('click', function(e) {
+      let seeMore = document.querySelector('.tip__see-more');
+      seeMore.classList.toggle('tip__see-more--visible-js');
+
+      let visibleText = document.querySelector('.tip__see-more--visible-js');
+      if (visibleText) {
+         readMore.textContent = "Hide";
+      } else {
+         readMore.textContent = "Read more";
+      }
+      
+   })
 });
 
 

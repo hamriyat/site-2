@@ -25,7 +25,6 @@ swiper-container {
    margin-left: auto;
    margin-right: auto;
    position: relative;
-   overflow: hidden;
    list-style: none;
    padding: 0;
    z-index: 1;
@@ -202,6 +201,7 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
    }
 }
 .swiper-virtual .swiper-slide {
+   backface-visibility: hidden;
    -webkit-backface-visibility: hidden;
    transform: translateZ(0);
 }
@@ -316,6 +316,7 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
    transition: 0.3s opacity;
    transform: translate3d(0, 0, 0);
    z-index: 10;
+   white-space: nowrap;
 }
 .swiper-pagination.swiper-pagination-hidden {
    opacity: 0;
@@ -360,7 +361,7 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader {
    transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 50px));
+   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, min(8%, 50px)));
    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 4px));
    display: inline-block;
    border-radius: 10px;
@@ -470,6 +471,7 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
    border-radius: var(--swiper-scrollbar-border-radius, 10px);
    position: relative;
+   touch-action: none;
    -ms-touch-action: none;
    background: var(--swiper-scrollbar-bg-color, rgba(0, 0, 0, 0.1));
 }
