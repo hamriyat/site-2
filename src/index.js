@@ -78,20 +78,70 @@ const menuBody  = document.querySelector('.menu');
    });
 
    // show hidden text (tip section)
-   const readMore = document.querySelector('.tip__btn');
+    const readMore = document.querySelector('.tip__btn');
+    const tip = document.querySelector('.tip');
+    const tipContent = document.querySelector('.tip__content');
+    const tipContentP = document.querySelector('.tip__content p');
+    let cHeight = tipContent.clientHeight;
 
-   readMore.addEventListener('click', function(e) {
-      let seeMore = document.querySelector('.tip__see-more');
-      seeMore.classList.toggle('tip__see-more--visible-js');
+    function autoHeightContent() {
+       if (tipContentP && tipContent) {
+           let pHeight = tipContentP.clientHeight;
+           tipContent.style.maxHeight = pHeight+'px';
+       }
+    }
 
-      let visibleText = document.querySelector('.tip__see-more--visible-js');
-      if (visibleText) {
-         readMore.textContent = "Hide";
-      } else {
-         readMore.textContent = "Read more";
-      }
-      
-   })
+    setTimeout(function () {
+       autoHeightContent();
+    }, 200)
+
+    window.addEventListener('resize', e => {
+        autoHeightContent();
+    });
+
+    readMore.addEventListener('click', function(e) {
+
+       let pHeight = tipContentP.clientHeight;
+       if (tipContent) {
+           tipContent.classList.toggle('open-js')
+           if (tipContent.classList.contains('open-js')) {
+               tipContent.style.maxHeight = cHeight + 'px';
+               readMore.textContent = "Hide";
+           } else {
+               tipContent.style.maxHeight = pHeight + 'px';
+               readMore.textContent = "Read more";
+               tip.scrollIntoView({
+                   behavior: 'auto',
+                   block: 'start'
+               })
+           }
+       }
+    })
+
+    function autoWidthContent() {
+        const allPagination = document.querySelector('.swiper-pagination');
+        const allBullets = document.querySelectorAll('.swiper-pagination-bullet');
+        let colBullets = allBullets.length;
+        let allWidthPagination = allPagination.clientWidth*0.8;
+        let bulletWidth = Math.round(((allWidthPagination / colBullets) - 9));
+
+        allBullets.forEach(el => {
+            el.style.width = bulletWidth + 'px';
+        });
+    }
+
+    setTimeout(function () {
+        autoWidthContent();
+    }, 1200)
+
+    window.addEventListener('resize', e => {
+        autoWidthContent();
+    });
+
+
+
+
+
 });
 
 

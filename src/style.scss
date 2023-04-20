@@ -717,7 +717,6 @@ body {
          margin-bottom: 0;
       }
    }
-
    .block {
       padding: 40px 15px;
       background: #FFFFFF;
@@ -735,7 +734,7 @@ body {
       &__img {
          margin: 0 auto 30px;
       }
-   
+
       &__title {
          font-size: 24px;
          font-weight: 500;
@@ -776,6 +775,7 @@ body {
       }
    }
 }
+
 
 // ================EXPERTS==============
 
@@ -2026,20 +2026,14 @@ body {
       color: #1D293F;
       line-height: 1.65;
       margin-bottom: 30px; 
-
+      overflow: hidden;
+      transition: 0.3s;
       & p:not(:last-child) {
          margin-bottom: 15px;
       }
    }
 
-   &__see-more {
-      height: 0;
-      overflow: hidden;
 
-      &--visible-js {
-         height: auto;
-      }
-   }
 
    &__btn {
       background-color: transparent;
